@@ -48,17 +48,17 @@ void Vector::Print()
 
 void Vector::PushBack(int a)
 {
-	int* temp = new int[size + 1];  // содаем новый массив (тек размер +1)
+	int* temp = new int[size + 1];  // Г±Г®Г¤Г ГҐГ¬ Г­Г®ГўГ»Г© Г¬Г Г±Г±ГЁГў (ГІГҐГЄ Г°Г Г§Г¬ГҐГ° +1)
 
 	for (int i = 0; i < size; i++)
 	{
-		temp[i] = arr[i]; // копируем текущие значения старого массива в новый массив
+		temp[i] = arr[i]; // ГЄГ®ГЇГЁГ°ГіГҐГ¬ ГІГҐГЄГіГ№ГЁГҐ Г§Г­Г Г·ГҐГ­ГЁГї Г±ГІГ Г°Г®ГЈГ® Г¬Г Г±Г±ГЁГўГ  Гў Г­Г®ГўГ»Г© Г¬Г Г±Г±ГЁГў
 	}
-	temp[size] = a; // инициализация последнего элемента параметром метода
+	temp[size] = a; // ГЁГ­ГЁГ¶ГЁГ Г«ГЁГ§Г Г¶ГЁГї ГЇГ®Г±Г«ГҐГ¤Г­ГҐГЈГ® ГЅГ«ГҐГ¬ГҐГ­ГІГ  ГЇГ Г°Г Г¬ГҐГІГ°Г®Г¬ Г¬ГҐГІГ®Г¤Г 
 
-	delete[] arr; // удаление старого массива!
+	delete[] arr; // ГіГ¤Г Г«ГҐГ­ГЁГҐ Г±ГІГ Г°Г®ГЈГ® Г¬Г Г±Г±ГЁГўГ !
 
-	arr = temp; // перенаправляем указатель в объекте на новый дин. массив
+	arr = temp; // ГЇГҐГ°ГҐГ­Г ГЇГ°Г ГўГ«ГїГҐГ¬ ГіГЄГ Г§Г ГІГҐГ«Гј Гў Г®ГЎГєГҐГЄГІГҐ Г­Г  Г­Г®ГўГ»Г© Г¤ГЁГ­. Г¬Г Г±Г±ГЁГў
 	size++;
 
 }
@@ -70,7 +70,7 @@ int Vector::PopBack()
 	{
 		temp[i] = arr[i];
 	}
-	int el = arr[size - 1]; // достаем последний элемент старого массива ДО удаления
+	int el = arr[size - 1]; // Г¤Г®Г±ГІГ ГҐГ¬ ГЇГ®Г±Г«ГҐГ¤Г­ГЁГ© ГЅГ«ГҐГ¬ГҐГ­ГІ Г±ГІГ Г°Г®ГЈГ® Г¬Г Г±Г±ГЁГўГ  Г„ГЋ ГіГ¤Г Г«ГҐГ­ГЁГї
 
 	delete[] arr;
 	arr = temp;
@@ -122,14 +122,17 @@ Vector& Vector::operator--()
 
 	return *this;
 }
-Vector& Vector::operator+=(int a) {
+Vector& Vector::operator+=(int a) 
+{
 	int* temp = new int[size + a];
 
-	for (int i = 0; i < size; i++) {
+	for (int i = 0; i < size; i++)
+	{
 		temp[i] = arr[i];
 	}
 
-	for (int i = size; i < size + a; i++) {
+	for (int i = size; i < size + a; i++)
+	{
 		temp[i] = 0;
 	}
 
@@ -141,10 +144,13 @@ Vector& Vector::operator+=(int a) {
 	return *this;
 }
 
-Vector& Vector::operator-=(int a) {
-	if (size >= a) {
+Vector& Vector::operator-=(int a) 
+{
+	if (size >= a) 
+	{
 		int* temp = new int[size - a];
-		for (int i = 0; i < size - a; i++) {
+		for (int i = 0; i < size - a; i++) 
+		{
 			temp[i] = arr[i];
 		}
 
@@ -155,11 +161,12 @@ Vector& Vector::operator-=(int a) {
 	}
 
 	return *this;
-
 }
 
-Vector& Vector::operator*=(int a) {
-	for (int i = 0; i < size; i++) {
+Vector& Vector::operator*=(int a) 
+{
+	for (int i = 0; i < size; i++)
+	{
 		arr[i] *= a;
 	}
 
