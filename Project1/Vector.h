@@ -1,6 +1,7 @@
 #pragma once
 class Vector
 {
+private:
 	int* arr;
 	int size;
 public:
@@ -9,14 +10,14 @@ public:
 	Vector(const Vector & obj);
 
 	Vector(int s);
-	void InputRand(); // инициализация случ числами
-	void Print();// вывод на консоль
+	void InputRand(); // ГЁГ­ГЁГ¶ГЁГ Г«ГЁГ§Г Г¶ГЁГї Г±Г«ГіГ· Г·ГЁГ±Г«Г Г¬ГЁ
+	void Print();// ГўГ»ГўГ®Г¤ Г­Г  ГЄГ®Г­Г±Г®Г«Гј
 
 	void PushBack(int a);
 	int PopBack();
 
 
-	/// перегрузки операции
+	/// ГЇГҐГ°ГҐГЈГ°ГіГ§ГЄГЁ Г®ГЇГҐГ°Г Г¶ГЁГЁ
 	Vector operator-(int a);
 	Vector& operator++();
 	Vector& operator--();
