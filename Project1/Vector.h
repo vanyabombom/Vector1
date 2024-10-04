@@ -9,6 +9,8 @@ public:
 	~Vector();
 	Vector(const Vector & obj);
 
+	Vector(std::initializer_list<int> list);
+
 	Vector(int s);
 	void InputRand(); // èíèöèàëèçàöèÿ ñëó÷ ÷èñëàìè
 	void Print();// âûâîä íà êîíñîëü
