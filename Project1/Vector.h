@@ -4,6 +4,8 @@ class Vector
 private:
 	int* arr;
 	int size;
+        friend ostream& operator<<(ostream& os, Vector obj);
+	friend istream& operator>>(istream& is, Vector& obj);
 public:
 	Vector();
 	~Vector();
