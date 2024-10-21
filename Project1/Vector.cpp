@@ -183,5 +183,28 @@ Vector& Vector::operator*=(int a)
 
 	return *this;
 }
+ostream& operator<<(ostream& os, Vector obj) 
+{
+	obj.Print();
+	return os;
+}
+
+istream& operator>>(istream& is, Vector& obj) 
+{
+	cout << "Size: ";
+	is >> obj.size;
+
+	if (obj.arr != nullptr) delete[] obj.arr;
+
+	obj.arr = new int[obj.size];
+
+	cout << "Elements: ";
+	for (int i = 0; i < obj.size; i++) 
+	{
+		is >> obj.arr[i];
+	}
+
+	return is;
+}
 
 
